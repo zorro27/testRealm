@@ -253,24 +253,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGL-Qs-VVU">
-                                <rect key="frame" x="181.5" y="703" width="51" height="30"/>
-                                <state key="normal" title="Update"/>
-                                <connections>
-                                    <action selector="updateButton:" destination="6i4-bR-RKH" eventType="touchUpInside" id="Auz-4D-xu9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49l-Jf-cgW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="49l-Jf-cgW" firstAttribute="bottom" secondItem="lGL-Qs-VVU" secondAttribute="bottom" constant="80" id="1yv-Xv-AgQ"/>
                             <constraint firstItem="Uxm-pk-B5E" firstAttribute="top" secondItem="1VV-7T-4AY" secondAttribute="bottom" constant="57" id="3tU-7F-wuZ"/>
                             <constraint firstItem="1VV-7T-4AY" firstAttribute="top" secondItem="49l-Jf-cgW" secondAttribute="top" constant="30" id="4IO-KK-71Q"/>
                             <constraint firstItem="Uxm-pk-B5E" firstAttribute="leading" secondItem="49l-Jf-cgW" secondAttribute="leading" constant="31" id="953-dQ-e0j"/>
                             <constraint firstItem="dQY-Mi-v4A" firstAttribute="leading" secondItem="49l-Jf-cgW" secondAttribute="leading" constant="31" id="aVT-j8-wjD"/>
                             <constraint firstItem="1VV-7T-4AY" firstAttribute="centerX" secondItem="CBn-ZA-9lR" secondAttribute="centerX" id="jcp-6t-rD9"/>
-                            <constraint firstItem="lGL-Qs-VVU" firstAttribute="centerX" secondItem="CBn-ZA-9lR" secondAttribute="centerX" id="m8O-ms-u6g"/>
                             <constraint firstItem="dQY-Mi-v4A" firstAttribute="top" secondItem="Uxm-pk-B5E" secondAttribute="bottom" constant="21" id="qS5-Ka-REM"/>
                         </constraints>
                     </view>

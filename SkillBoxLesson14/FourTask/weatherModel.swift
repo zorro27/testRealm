@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class weatherModel {
     var temp: Double = 0.0
     var speed: Double = 0.0

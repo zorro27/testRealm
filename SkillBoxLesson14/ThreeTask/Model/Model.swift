@@ -11,9 +11,18 @@ import RealmSwift
 class ToDoListItem: Object {
     @objc dynamic var title = ""
     @objc dynamic var date = ""
+    @objc dynamic var done = false
 }
+
+class tableRealm {
+    
 let realm = try! Realm()
+    
 var toDoListArray: Results<ToDoListItem>!
+
+func presentTable () {
+    toDoListArray = realm.objects(ToDoListItem.self)
+}
 
 func dateString () -> String {
     let date = Date()
@@ -27,6 +36,7 @@ func addTitle(text: String) {
     let task = ToDoListItem()
     task.title = text
     task.date = dateString()
+    task.done = false
     try! realm.write {
          realm.add(task)
     }
@@ -36,5 +46,11 @@ func delTitle (indexPath: IndexPath) {
     let editingRow = toDoListArray[indexPath.row]
     try! realm.write{
          realm.delete(editingRow)
+        }
+    }
+    
+    func state (indexPath: IndexPath) {
+        let item = toDoListArray[indexPath.row]
+        item.done = !item.done
     }
 }

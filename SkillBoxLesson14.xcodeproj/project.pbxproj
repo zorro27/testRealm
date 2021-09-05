@@ -22,6 +22,7 @@
 		B14E355D2621B70400921FEE /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E355C2621B70400921FEE /* UserDefault.swift */; };
 		B14E35602621BF2300921FEE /* CoreDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E355F2621BF2300921FEE /* CoreDataTask.swift */; };
 		B14E35682621C7F900921FEE /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E35672621C7F900921FEE /* Persistance.swift */; };
+		B1A1105A26E3E542002827EC /* coreDateFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1105926E3E542002827EC /* coreDateFunc.swift */; };
 		C5C67AF2B678A20D2D57E3DD /* Pods_SkillBoxLesson14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAA2D491352719F571D326A /* Pods_SkillBoxLesson14.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		B14E355C2621B70400921FEE /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		B14E355F2621BF2300921FEE /* CoreDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTask.swift; sourceTree = "<group>"; };
 		B14E35672621C7F900921FEE /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		B1A1105926E3E542002827EC /* coreDateFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDateFunc.swift; sourceTree = "<group>"; };
 		C27B77F21621CCB489F6E6A6 /* Pods-SkillBoxLesson14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillBoxLesson14.release.xcconfig"; path = "Target Support Files/Pods-SkillBoxLesson14/Pods-SkillBoxLesson14.release.xcconfig"; sourceTree = "<group>"; };
 		E7684031222BE9DF975FA7F4 /* Pods-SkillBoxLesson14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkillBoxLesson14.debug.xcconfig"; path = "Target Support Files/Pods-SkillBoxLesson14/Pods-SkillBoxLesson14.debug.xcconfig"; sourceTree = "<group>"; };
 		FCAA2D491352719F571D326A /* Pods_SkillBoxLesson14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkillBoxLesson14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B14E355F2621BF2300921FEE /* CoreDataTask.swift */,
+				B1A1105926E3E542002827EC /* coreDateFunc.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				B14E35602621BF2300921FEE /* CoreDataTask.swift in Sources */,
 				B1011DA12683C451006937A3 /* weatherLoader.swift in Sources */,
 				B14E35472621B4A500921FEE /* AppDelegate.swift in Sources */,
+				B1A1105A26E3E542002827EC /* coreDateFunc.swift in Sources */,
 				B14E35492621B4A500921FEE /* SceneDelegate.swift in Sources */,
 				B14E355D2621B70400921FEE /* UserDefault.swift in Sources */,
 				B146480726DEAA5C0026E976 /* weatherSave.swift in Sources */,

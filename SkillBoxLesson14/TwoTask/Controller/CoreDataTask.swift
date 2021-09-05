@@ -8,18 +8,22 @@
 import UIKit
 import CoreData
 
+var items = [Items]()
+
 class CoreDataTask: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var Table: UITableView!
 
-    var items = [Items]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+ 
+    var result = tableCoreData()
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        Table.tableFooterView = UIView()
         Table.delegate = self
         Table.dataSource = self
-        loadItems()
+        result.loadItems()
+        self.Table.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +35,13 @@ class CoreDataTask: UIViewController, UITableViewDelegate, UITableViewDataSource
         let item = items[indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.dataCreate
+        if item.isDone {
+        cell.accessoryType = .checkmark
+        cell.textLabel?.textColor = .systemGray4
+        cell.detailTextLabel?.textColor = .systemGray4
+        }else{
+        cell.accessoryType = .none
+        }
         return cell
         }
 
@@ -40,11 +51,10 @@ class CoreDataTask: UIViewController, UITableViewDelegate, UITableViewDataSource
         let alert = UIAlertController(title: "New Task", message: "Rite", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Save", style: .default) {(action) in
-            let newItems = Items(context: self.context)
-            newItems.name = alertTF.text!
-            newItems.dataCreate = dateString()
-            self.items.append(newItems)
-            self.saveItems()
+            let nameItem = alertTF.text ?? "No name"
+            self.result.addItem(name: nameItem)
+            self.result.saveItems()
+            self.Table.reloadData()
         }
         
         alert.addTextField {field in
@@ -58,32 +68,28 @@ class CoreDataTask: UIViewController, UITableViewDelegate, UITableViewDataSource
    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
-            let item = items[indexPath.row]
-            items.remove(at: indexPath.row)
-            context.delete(item)
-
-            do{
-            try context.save()
-            } catch {
-                print("Error")
-            }
+            result.delete(indexPath: indexPath)
+            result.saveItems()
             tableView.deselectRow(at: indexPath, animated: true)
         }
         self.Table.reloadData()
     }
     
-    func saveItems() {
-        do{
-        try context.save()
-        } catch {
-            print("Error")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let item = items[indexPath.row]
+        let state = tableCoreData()
+        state.state(indexPath: indexPath)
+        if item.isDone {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            Table.cellForRow(at: indexPath)?.textLabel?.textColor = .systemGray4
+            Table.cellForRow(at: indexPath)?.detailTextLabel?.textColor = .systemGray4
+            
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            Table.cellForRow(at: indexPath)?.textLabel?.textColor = .black
+            Table.cellForRow(at: indexPath)?.detailTextLabel?.textColor = .black
         }
-        self.Table.reloadData()
-    }
-    
-    func loadItems() {
-        let request: NSFetchRequest<Items> = Items.fetchRequest()
-        items = try! context.fetch(request)
-        self.Table.reloadData()
+        result.saveItems()
     }
 }

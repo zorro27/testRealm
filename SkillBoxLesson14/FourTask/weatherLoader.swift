@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 protocol weatherDelegate {
     func saveWeather (temp: Double, wind: Double)
@@ -17,7 +16,6 @@ var apiKey = "df20d04763777b12725acd6f5cb77517"
 var urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + apiKey
 
 class weatherLoader {
-    let realm = try! Realm()
     var delegate: weatherDelegate?
     
     func loadWeather () {
