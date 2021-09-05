@@ -82,11 +82,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let item = tableResult.toDoListArray[indexPath.row]
-        let state = tableResult.state(indexPath: indexPath)
-        if item.done {
-            print("true")
+        
+        if item.done == true {
+            item.done = false
+            
         } else {
-            print("false")
+            item.done = true
         }
+        tableResult.save(indexPath: indexPath)
     }
 }

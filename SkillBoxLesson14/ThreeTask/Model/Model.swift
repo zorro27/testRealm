@@ -53,4 +53,11 @@ func delTitle (indexPath: IndexPath) {
         let item = toDoListArray[indexPath.row]
         item.done = !item.done
     }
+    
+    func save (indexPath: IndexPath){
+        let save = toDoListArray[indexPath.row]
+        try! realm.write{
+             realm.add(save)
+            }
+    }
 }
