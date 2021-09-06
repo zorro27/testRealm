@@ -49,15 +49,10 @@ func delTitle (indexPath: IndexPath) {
         }
     }
     
-    func state (indexPath: IndexPath) {
-        let item = toDoListArray[indexPath.row]
-        item.done = !item.done
-    }
-    
-    func save (indexPath: IndexPath){
-        let save = toDoListArray[indexPath.row]
+    func state (indexPath: IndexPath){
+        let state = toDoListArray[indexPath.row].done
         try! realm.write{
-             realm.add(save)
+            toDoListArray[indexPath.row].done = !state
             }
     }
 }

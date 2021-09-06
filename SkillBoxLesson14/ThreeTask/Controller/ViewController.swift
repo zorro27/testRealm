@@ -66,7 +66,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = deleteAction(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
         return UISwipeActionsConfiguration(actions: [delete])
+      
     }
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
@@ -80,15 +82,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         let item = tableResult.toDoListArray[indexPath.row]
-        
-        if item.done == true {
-            item.done = false
-            
+        tableResult.state(indexPath: indexPath)
+        if item.done {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            Table.cellForRow(at: indexPath)?.textLabel?.textColor = .systemGray4
+            Table.cellForRow(at: indexPath)?.detailTextLabel?.textColor = .systemGray4
         } else {
-            item.done = true
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            Table.cellForRow(at: indexPath)?.textLabel?.textColor = .black
+            Table.cellForRow(at: indexPath)?.detailTextLabel?.textColor = .black
         }
-        tableResult.save(indexPath: indexPath)
+        Table.reloadData()
     }
 }

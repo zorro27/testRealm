@@ -10,8 +10,8 @@
 		B1011D9E2683C39D006937A3 /* weatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1011D9D2683C39D006937A3 /* weatherModel.swift */; };
 		B1011DA12683C451006937A3 /* weatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1011DA02683C451006937A3 /* weatherLoader.swift */; };
 		B1011DA42683C804006937A3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1011DA32683C804006937A3 /* WeatherViewController.swift */; };
-		B113072F267D3343009C07C1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B113072E267D3343009C07C1 /* Model.swift */; };
 		B1130743267E6CA9009C07C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130742267E6CA9009C07C1 /* ViewController.swift */; };
+		B11D99B026E6992900448BA3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11D99AF26E6992900448BA3 /* Model.swift */; };
 		B124A1C6267FD72100D73455 /* SkillBoxLesson14.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B124A1C4267FD72100D73455 /* SkillBoxLesson14.xcdatamodeld */; };
 		B146480726DEAA5C0026E976 /* weatherSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = B146480626DEAA5C0026E976 /* weatherSave.swift */; };
 		B14E35472621B4A500921FEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E35462621B4A500921FEE /* AppDelegate.swift */; };
@@ -30,8 +30,8 @@
 		B1011D9D2683C39D006937A3 /* weatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherModel.swift; sourceTree = "<group>"; };
 		B1011DA02683C451006937A3 /* weatherLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherLoader.swift; sourceTree = "<group>"; };
 		B1011DA32683C804006937A3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		B113072E267D3343009C07C1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B1130742267E6CA9009C07C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B11D99AF26E6992900448BA3 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SkillBoxLesson14/ThreeTask/Model/Model.swift; sourceTree = SOURCE_ROOT; };
 		B124A1C5267FD72100D73455 /* SkillBoxLesson14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SkillBoxLesson14.xcdatamodel; sourceTree = "<group>"; };
 		B146480626DEAA5C0026E976 /* weatherSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherSave.swift; sourceTree = "<group>"; };
 		B14E35432621B4A500921FEE /* SkillBoxLesson14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillBoxLesson14.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +156,7 @@
 		B1130738267E2518009C07C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B113072E267D3343009C07C1 /* Model.swift */,
+				B11D99AF26E6992900448BA3 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,13 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B113072F267D3343009C07C1 /* Model.swift in Sources */,
 				B1011D9E2683C39D006937A3 /* weatherModel.swift in Sources */,
 				B14E35602621BF2300921FEE /* CoreDataTask.swift in Sources */,
 				B1011DA12683C451006937A3 /* weatherLoader.swift in Sources */,
 				B14E35472621B4A500921FEE /* AppDelegate.swift in Sources */,
 				B1A1105A26E3E542002827EC /* coreDateFunc.swift in Sources */,
 				B14E35492621B4A500921FEE /* SceneDelegate.swift in Sources */,
+				B11D99B026E6992900448BA3 /* Model.swift in Sources */,
 				B14E355D2621B70400921FEE /* UserDefault.swift in Sources */,
 				B146480726DEAA5C0026E976 /* weatherSave.swift in Sources */,
 				B1130743267E6CA9009C07C1 /* ViewController.swift in Sources */,
